@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Maps</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 80%;
+      }
+    </style>
+    <center>
+    <h1>Fitbit Statistics Applications </h1>
+    </center>
+  </head>
+  <body>
+       <center>
+    <h1>Fitbit Statistics Applications </h1>
+    </center>
+     <br>  
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+       
+      <li ><a href="./mile.html">Miles</a></li>
+      <li><a href="./step.html">Steps</a></li>
+      <li  class="active"><a href="./maps.html">Maps</a></li>
+    </ul>
+  </div>
+</nav>  
+    <div id="map"></div>
+    <script>
+
+      // This example displays a marker at the center of Australia.
+// When the user clicks the marker, an info window opens.
+
+function initMap() {
+	var directionsDisplay = new google.maps.DirectionsRenderer;
+  var directionsService = new google.maps.DirectionsService;
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  calculateAndDisplayRoute1(directionsService, directionsDisplay);
+ 
+    calculateAndDisplayRoute1(directionsService, directionsDisplay);
+  
+  
+  
+  var ull = {
+    lat: 30.21530,
+    lng: -92.019200
+  };
+  
+  
+  
+  var alexandria = {
+    lat: 31.3113,
+    lng: -92.4451
+  }; 
+  
+  var lecompte = {
+    lat: 31.0946,
+    lng: -92.4004
+  }; 
+  
+  var bunkie = {
+    lat: 30.9532,
+    lng: -92.1826
+  };
+  var beggs = {
+    lat: 30.6805,
+    lng: -92.0529
+  };
+  var opelousas = {
+    lat: 30.5335,
+    lng: -92.0815
+  };
+	var sunset = {
+    lat: 30.4113,
+    lng: -92.0685
+  };
+  var carencro = {
+    lat: 30.3171,
+    lng: -92.0490
+  };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center:bunkie 
+  });
+  directionsDisplay.setMap(map);
+  var ull_i = new Image();
+  ull_i.src = "http://hurricanesports.com/pics32/0/PC/PCEXKKMYNQFPJWG.20130127021221.gif";
+  ull_i.style.height = "50px";
+  ull_i.style.width = "50px";
+  
+  var carencro_i = new Image();
+  carencro_i.src = "http://www.carencro.org/images/car-logomain.gif";
+  carencro_i.style.height = "50px";
+  carencro_i.style.width = "50px";
+  
+  var bunkie_i = new Image();
+  bunkie_i.src = "https://s-media-cache-ak0.pinimg.com/236x/7c/f0/7a/7cf07a1616b6b5b52c2fb944bdb9c023.jpg";
+  bunkie_i.style.height = "50px";
+  bunkie_i.style.width = "50px";
+  
+  var sunset_i = new Image();
+  sunset_i.src = "http://www.sunset.govoffice2.com/vertical/Sites/%7B925AC499-7A8B-4DEA-9273-5EB4B0516747%7D/uploads/IMG_0482.jpg";
+  sunset_i.style.height = "50px";
+  sunset_i.style.width = "50px";
+  
+  var opelousas_i = new Image();
+  opelousas_i.src = "http://mw2.google.com/mw-panoramio/photos/medium/53643435.jpg";
+  opelousas_i.style.height = "50px";
+  opelousas_i.style.width = "50px";
+
+  var lecompte_i = new Image();
+  lecompte_i.src = "http://deepsouthmag.com/wp-content/uploads/2012/10/piefest.jpg";
+  lecompte_i.style.height = "50px";
+  opelousas_i.style.width = "50px";
+  
+  var infowindow = new google.maps.InfoWindow({
+    content: ull_i
+  });
+
+  var marker = new google.maps.Marker({
+    position: ull,
+    map: map,
+    title: 'Uluru (Ayers Rock)'
+  });
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+  
+  var infowindow1 = new google.maps.InfoWindow({
+    content: carencro_i
+  });
+
+  var marker1 = new google.maps.Marker({
+    position: carencro,
+    map: map,
+    title: 'Uluru (Ayers Rock)'
+  });
+  marker1.addListener('click', function() {
+    infowindow1.open(map, marker1);
+  });
+  
+ 
+  var infowindow2 = new google.maps.InfoWindow({
+    content: sunset_i
+  });
+
+  var marker2 = new google.maps.Marker({
+    position: sunset,
+    map: map,
+    title: 'Uluru (Ayers Rock)'
+  });
+  marker2.addListener('click', function() {
+    infowindow2.open(map, marker2);
+  });
+  
+  
+  var infowindow3 = new google.maps.InfoWindow({
+    content: opelousas_i
+  });
+
+  var marker3 = new google.maps.Marker({
+    position: opelousas,
+    map: map
+  });
+  marker3.addListener('click', function() {
+    infowindow3.open(map, marker3);
+  });
+  
+  
+  var infowindow4 = new google.maps.InfoWindow({
+    content: ull_i
+  });
+
+  var marker4 = new google.maps.Marker({
+    position: beggs,
+    map: map
+    
+  });
+  marker4.addListener('click', function() {
+    infowindow4.open(map, marker4);
+  });
+  
+  var infowindow5 = new google.maps.InfoWindow({
+    content: bunkie_i
+  });
+
+  var marker5 = new google.maps.Marker({
+    position: bunkie,
+    map: map
+  });
+  marker5.addListener('click', function() {
+    infowindow5.open(map, marker5);
+  });
+  
+  var infowindow6 = new google.maps.InfoWindow({
+    content: lecompte_i
+  });
+
+  var marker6 = new google.maps.Marker({
+    position:lecompte,
+    map: map
+  });
+  marker6.addListener('click', function() {
+    infowindow6.open(map, marker6);
+  });
+ 
+  var infowindow7 = new google.maps.InfoWindow({
+    content: alexandria_i
+  });
+
+  var marker7 = new google.maps.Marker({
+    position: alexandria,
+    map: map
+     
+  });
+  marker7.addListener('click', function() {
+    infowindow7.open(map, marker7);
+  });
+  
+  
+}
+
+function calculateAndDisplayRoute1(directionsService, directionsDisplay) {
+  
+  directionsService.route({
+    origin: {lat: 30.21530, lng: -92.019200},  
+    destination: {lat: 31.3113, lng: -92.4451},  
+    // Note that Javascript allows us to access the constant
+    // using square brackets and a string value as its
+    // "property."
+    waypoints: [
+    {
+      location: {lat: 30.274100, lng: -92.033200},
+      stopover: false
+    },{
+      location: {lat: 30.3171, lng: -92.0490},
+      stopover: false
+    },{
+      location: {lat: 30.4113, lng: -92.0685},
+      stopover: false
+    },{
+      location: {lat: 30.5335, lng: -92.0815},
+      stopover: false
+    },{
+      location: {lat: 30.6805, lng: -92.0529},
+      stopover: false
+    },{
+      location: {lat: 30.9532, lng: -92.1826},
+      stopover: false
+    },{
+      location: {lat: 31.0946, lng: -92.4004},
+      stopover: false
+    }],
+    travelMode: 'WALKING'
+  }, function(response, status) {
+    if (status == 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
+
+  
+
+
+
+
+
+
+      </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9kjV6RwlXIk2q-TIG3f7Y-jitiDszE9g&callback=initMap">
+    </script>
+  </body>
+</html>
